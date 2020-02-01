@@ -45,7 +45,7 @@ public class HeartiController {
 	@RequestMapping(value = "/api/yearlyReport",method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<List<IntervalPrediction>> yearlyReport() throws SQLException {
 		try {
-			List<IntervalPrediction> yearlypredication = heartInfoService..yearlyReport();
+			List<IntervalPrediction> yearlypredication = heartInfoService.yearlyReport();
 			if (yearlypredication == null) {
 				return new ResponseEntity<List<IntervalPrediction>>(yearlypredication, HttpStatus.NO_CONTENT);
 			} else
