@@ -14,8 +14,8 @@ pipeline {
                     }
                             steps { 
                               script{
-                                bat label: '', script: 'mvn install'
-				                bat label: '', script: 'mvn clean package'
+                                sh label: '', script: 'mvn install'
+				                sh label: '', script: 'mvn clean package'
                                }
                            }
 		  }
@@ -24,12 +24,6 @@ pipeline {
                              archiveArtifacts 'discoveri-heartihealth-webapp/target/*.jar' 
                          } 
                  } 
-                   stage('CreateService'){
-		       steps{
-                           script{
-                              bat "CreateService.bat"
-		           }
-                       }
-		   }
+                
 	}
 }
